@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BXSea – Xtraordinary Xperience</title>
+<meta name="description" content="BXSea at Bintaro Jaya Xchange Mall 2 — where sea, river, and rainforest come alive in one breathtaking journey." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Inter:wght@500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ========== FIXED HEADER (logo + menu) ========== -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a class="logo" href="#home" aria-label="BXSea home"><img src="img/logo.png" alt="BXSea" width="160" height="61" /></a>
+    <div class="header-right">
+      <nav aria-label="Main navigation">
+        <a href="#visit-us">VISIT US</a>
+        <a href="#about-us">ABOUT US</a>
+        <a href="#explore">EXPLORE</a>
+        <a href="#events">EVENTS</a>
+      </nav>
+      <button type="button" class="contact-btn" data-open-contact aria-haspopup="dialog">
+        <svg viewBox="1335.6 95.4 20.4 20.4" width="19" height="19" aria-hidden="true"><path fill="currentColor" d="M1355.54 110.577C1355.37 111.894 1354.72 113.104 1353.72 113.979C1352.72 114.854 1351.44 115.335 1350.11 115.333C1342.39 115.333 1336.11 109.052 1336.11 101.333C1336.11 100.004 1336.59 98.7201 1337.47 97.7203C1338.34 96.7206 1339.55 96.0736 1340.87 95.9002C1341.2 95.8596 1341.54 95.9277 1341.83 96.0945C1342.12 96.2613 1342.35 96.5179 1342.48 96.8258L1344.54 101.41V101.421C1344.64 101.657 1344.68 101.915 1344.66 102.171C1344.64 102.427 1344.55 102.673 1344.41 102.889C1344.4 102.915 1344.38 102.939 1344.36 102.963L1342.33 105.363C1343.06 106.843 1344.61 108.377 1346.11 109.107L1348.48 107.093C1348.5 107.074 1348.52 107.056 1348.55 107.039C1348.76 106.896 1349.01 106.808 1349.27 106.784C1349.53 106.76 1349.79 106.801 1350.02 106.903L1350.04 106.909L1354.62 108.961C1354.92 109.094 1355.18 109.323 1355.35 109.615C1355.52 109.906 1355.58 110.243 1355.54 110.577Z"/></svg>
+        CONTACT US
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ========== CONTACT POP-UP ========== -->
+<div class="modal" id="contact-modal" hidden>
+  <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="dialog-head">
+      <h2 id="contact-title">Contact us</h2>
+      <button type="button" class="close" aria-label="Close" data-close-contact>
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <p class="dialog-sub">We would love to hear from you.</p>
+
+    <form id="contact-form" novalidate>
+      <label>Name<input required name="name" type="text" autocomplete="name" /></label>
+      <label>Email<input required name="email" type="email" autocomplete="email" /></label>
+      <label>Message<textarea name="message" rows="3"></textarea></label>
+      <p class="form-error" id="form-error" role="alert" hidden></p>
+      <button type="submit" class="send">SEND MESSAGE</button>
+    </form>
+
+    <div class="sent" id="contact-sent" hidden>
+      <p class="sent-title">Message sent!</p>
+      <p class="sent-text">Thanks, <span id="sent-name"></span>. The BXSea Team will get back to you soon.</p>
+      <button type="button" class="send" data-close-contact>CLOSE</button>
+    </div>
+  </section>
+</div>
+
+<main class="stage">
+
+  <!-- ========== 1. HERO ========== -->
+  <section class="sec" id="home">
+    <img class="art" src="img/section-1.jpg" alt="" />
+
+    <h1 class="t display dark" data-r="40,240,490,340" aria-label="Dive Into an Xtraordinary Xperience" style="left:50px;top:256px;font-size:85.9px;letter-spacing:-0.0345em">D&nbsp;&nbsp;ve Into an</h1>
+    <p class="t display grad" data-r="40,340,1175,460" data-t="50,348,1163,450" aria-hidden="true" style="left:49px;top:334px;font-size:109.8px;letter-spacing:-0.0313em;--g:linear-gradient(180deg,#C7DCFF,#335FA3)">#XtraordinaryXperience</p>
+
+    <p class="t body semi dark" data-r="235,455,860,560" style="left:241px;top:462px;font-size:37.5px;line-height:45.1px">Where sea, river, and rainforest<br />come alive in one breathtaking journey.</p>
+
+    <a class="btn-tickets" href="#visit-us">GET TICKETS!</a>
+
+    <p class="t body dark" data-r="235,655,610,725" style="left:242px;top:665px;font-size:24.1px;line-height:28.1px">Begin your exploration and discover<br />the beauty of nature’s hidden world.</p>
+  </section>
+
+  <!-- ========== 2. ABOUT ========== -->
+  <section class="sec" id="about-us">
+    <img class="art" src="img/section-2.jpg" alt="" />
+
+    <h2 class="t display dark" data-r="40,1020,580,1140" style="left:50px;top:144px;font-size:99.3px;letter-spacing:-0.0238em">Beneath the</h2>
+    <h2 class="t display dark" data-r="615,1240,1390,1340" style="left:623px;top:331px;font-size:116.1px;letter-spacing:-0.0328em">Surface Lies an</h2>
+
+    <p class="t body dark p31" data-r="235,1150,600,1310" style="left:242px;top:254px">At <span class="blue">BXSea</span>, every ripple tells a story.<br />Located in <b class="blue">Bintaro Jaya<br />Xchange Mall 2</b>, BXSea is a<br />sanctuary of life where the sea and<br />forest meet.</p>
+
+    <p class="t body dark p31" data-r="620,1355,940,1515" style="left:628px;top:459px">Home to over <b class="blue">25,000 sea and<br />freshwater creatures</b>,<br />BXSea blends education and<br />entertainment into a seamless<br />experience.</p>
+
+    <p class="t body dark p31" data-r="995,1355,1350,1485" style="left:1003px;top:459px">Step into a world where the ocean<br />feels alive, and every moment<br />becomes an<br /><b class="blue">Xtraordinary Xperience.</b></p>
+
+    <p class="sr-only">Xtraordinary World</p>
+    <p class="t display sky" data-r="475,1665,607,1750" aria-hidden="true" style="left:480px;top:747px;font-size:112.7px;letter-spacing:-0.0189em">tra</p>
+    <p class="t display sky" data-r="609,1580,990,1700" aria-hidden="true" style="left:608px;top:700px;font-size:105.5px;letter-spacing:-0.0338em">ordinary</p>
+    <p class="t display dark" data-r="990,1570,1105,1670" aria-hidden="true" style="left:998px;top:654px;font-size:123.9px;letter-spacing:-0.05em">W</p>
+    <p class="t display dark" data-r="1170,1570,1310,1670" data-a="r" aria-hidden="true" style="right:293px;top:654px;font-size:123.9px;letter-spacing:-0.0298em">rld</p>
+
+    <p class="t body bold dark" data-r="1000,1675,1375,1750" style="left:1007px;top:784px;font-size:26px;line-height:33.8px">Where learning flows like water.<br />Gentle, deep, and full of wonder.</p>
+  </section>
+
+  <!-- ========== 3. JOURNEYS ========== -->
+  <section class="sec" id="explore">
+    <img class="art" src="img/section-3.jpg" alt="" />
+
+    <h2 class="sr-only">20 Journeys, Endless Wonders</h2>
+    <p class="t display grad" data-r="790,1960,1000,2095" data-t="811,1973,983,2091" aria-hidden="true" style="left:804px;top:149px;font-size:154.5px;letter-spacing:0.0147em;--g:linear-gradient(180deg,#C7DCFF,#4F74AE)">20</p>
+    <p class="t display dark" data-r="985,2035,1290,2110" aria-hidden="true" style="left:990px;top:228px;font-size:70px;letter-spacing:-0.0321em">Journeys,</p>
+    <p class="t display grad" data-r="870,2095,1550,2175" data-t="879,2103,1542,2169" aria-hidden="true" style="left:874px;top:288px;font-size:91px;letter-spacing:-0.0257em;--g:linear-gradient(90deg,#4169A5,#9BBEF0)">Endless Wonders</p>
+
+    <p class="t body semi dark" data-r="1195,2180,1565,2245" data-a="r" style="right:47px;top:386px;text-align:right;font-size:22.2px;line-height:28.2px">Step beneath the waves and into a<br />world where every corner tells a story.</p>
+
+    <div class="stop" data-r="180,1995,385,2065" style="left:185px;top:205px;--c:#C28FAE"><h3>Sea Tunnel</h3><p>Glide through Southeast Asia’s<br />largest underwater tunnel</p></div>
+    <div class="stop" data-r="375,2150,565,2220" style="left:381px;top:359px;--c:#628BC8"><h3>Schooling Fish</h3><p>Witness the rhythm of ocean<br />life up close</p></div>
+    <div class="stop" data-r="650,2343,820,2415" style="left:656px;top:553px;--c:#92AB7F"><h3>Rainforest</h3><p>Where land meets water<br />in harmony</p></div>
+    <div class="stop" data-r="905,2468,1075,2535" style="left:911px;top:678px;--c:#6363A8"><h3>Jellyfish Realm</h3><p style="line-height:14.1px">Explore the beauty of light<br />and motion</p></div>
+    <div class="stop" data-r="1315,2378,1470,2450" style="left:1321px;top:588px;--c:#838383"><h3>Penguin Cove</h3><p>A glimpse of life from<br />the polar seas</p></div>
+  </section>
+
+  <!-- ========== 4. MEMORIES ========== -->
+  <section class="sec" id="memories">
+    <img class="art" src="img/section-4.jpg" alt="" />
+
+    <h2 class="t display dark" data-r="345,2970,870,3060" style="left:356px;top:267px;font-size:92.6px;letter-spacing:-0.0306em">Memories as</h2>
+    <p class="t display grad" data-r="610,3055,1360,3160" data-t="620,3064,1347,3148" style="left:615px;top:349px;font-size:92.6px;letter-spacing:-0.0230em;--g:linear-gradient(180deg,#D3E1F7,#86A2CF)">Deep as the Ocean</p>
+
+    <p class="t body dark p366" data-r="240,3160,605,3305" style="left:250px;top:463px">Every visit to <b>BXSea</b> tells a story.<br />From glowing jellyfish, shimmering<br />tunnels, until the laughters echoing<br />in the dome.</p>
+
+    <p class="t body dark p366" data-r="430,3360,890,3505" style="left:441px;top:664px">Capture your favorite scenes,<br />share them with <b class="blue">#BXSeaMoments</b>,<br />and relive the joy of discovery because<br />some wonders are too beautiful not to share.</p>
+  </section>
+
+  <!-- ========== 5. SHOWS ========== -->
+  <section class="sec" id="events">
+    <img class="art" src="img/section-5.jpg" alt="" />
+    <h3 class="sr-only">Daily Feeding Shows, Penguin Parade, Mermaid Performances</h3>
+
+    <h2 class="t display dark" data-r="470,3860,1020,4040" data-a="r" style="right:591px;top:273px;text-align:right;font-size:80px;letter-spacing:-0.0294em;line-height:87.3px"><span style="display:block;padding-right:0.375em">Experience the<span class="sr-only"> Sea</span></span><span style="display:block">Come to Life</span></h2>
+
+    <p class="t body dark" data-r="550,4045,1090,4130" style="left:560px;top:459px;font-size:37.5px;line-height:30.9px;letter-spacing:-0.02em">Witness the ocean’s magic unfold<br />up close, alive, and unforgettable.</p>
+
+    <h3 class="t sf dark" data-r="1025,4180,1335,4255" style="left:1035px;top:593px;width:300px;text-align:center;font-size:32.9px;line-height:25.4px">Sea Theatre &amp;<br />Amphitheater Shows</h3>
+
+    <p class="t body bold sky" data-r="1235,4390,1545,4445" style="left:1241px;top:794px;font-size:39.1px">...and many more!</p>
+  </section>
+
+  <!-- ========== 6. PLAN YOUR VISIT ========== -->
+  <section class="sec" id="visit-us">
+    <img class="art" src="img/section-6.jpg" alt="" />
+
+    <h2 class="t display dark" data-r="990,4755,1545,4835" style="left:1000px;top:251px;font-size:87.6px;letter-spacing:-0.0370em">Plan Your Visit</h2>
+    <p class="t body dark" data-r="995,4835,1460,4900" style="left:1003px;top:337px;font-size:24px;line-height:28.1px">Dive <span class="sky">deeper</span>, dream <span class="sky">bigger</span><br />in BXSea, your <span class="sky">Xtraordinary Xperience</span> awaits.</p>
+
+    <h3 class="t body semi label" data-r="235,4910,325,4940" style="left:242px;top:414px">Visit Us</h3>
+    <address class="t body dark" data-r="235,4960,395,5060" style="left:242px;top:466px;font-size:22px;line-height:22.5px"><b>Bintaro Jaya<br />Xchange Mall 2</b><br />Tangerang<br />Selatan</address>
+
+    <h3 class="t body semi label" data-r="425,4910,500,4940" style="left:433px;top:415px">Hours</h3>
+    <p class="t body dark" data-r="425,4955,615,5062" style="left:433px;top:460px;font-size:22px;line-height:25.3px"><b>Weekdays:</b><br />10.00 – 22.00 WIB<br /><b>Weekends:</b><br />09.00 – 22.00 WIB</p>
+
+    <h3 class="t body semi label" data-r="633,4910,765,4940" style="left:641px;top:414px">Get in touch</h3>
+    <ul class="t body dark contact-list" data-r="665,4960,815,5050" style="left:671px;top:462px;font-size:22px;line-height:28.1px">
+      <li><a href="mailto:hello@bxsea.id">hello@<b>bxsea</b>.id</a></li>
+      <li><a href="tel:+62211234567">(021) 123-4567</a></li>
+      <li><a href="https://instagram.com/bxsea" target="_blank" rel="noopener">@<b>bxsea</b></a></li>
+    </ul>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
