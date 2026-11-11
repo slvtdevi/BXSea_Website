@@ -85,3 +85,32 @@ function showError(msg, field) {
   errorBox.hidden = false;
   field.focus();
 }
+
+// ---------- Animals & event cards: tap to pop on touch screens ----------
+const poppers = [...document.querySelectorAll('.pop, .event')];
+poppers.forEach(el => {
+  el.addEventListener('click', () => {
+    const on = !el.classList.contains('tapped');
+    poppers.forEach(p => p.classList.remove('tapped'));
+    if (on) el.classList.add('tapped');
+  });
+  el.addEventListener('mouseleave', () => el.classList.remove('tapped'));
+});
+document.addEventListener('click', e => {
+  if (!e.target.closest('.pop, .event')) poppers.forEach(p => p.classList.remove('tapped'));
+});
+
+// ---------- 20 Journeys: tap a dot to open it on touch screens ----------
+const stops = [...document.querySelectorAll('.jstop')];
+stops.forEach(st => {
+  const btn = st.querySelector('.hit');
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const on = !st.classList.contains('open');
+    stops.forEach(o => { o.classList.remove('open'); o.querySelector('.hit').setAttribute('aria-expanded', 'false'); });
+    if (on) { st.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+  });
+});
+document.addEventListener('click', e => {
+  if (!e.target.closest('.jstop')) stops.forEach(o => { o.classList.remove('open'); o.querySelector('.hit').setAttribute('aria-expanded', 'false'); });
+});

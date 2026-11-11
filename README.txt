@@ -18,3 +18,7 @@ Notes
   - CONTACT US (top right) opens a pop-up form. It checks name and email and
     shows a thank-you message, but nothing is sent yet: connect it to a form
     service (e.g. Formspree) to receive messages by email.
+  - 20 Journeys: only the dots show; hover (or tap) a dot to open its pin and card.
+  - Animals (manta, whale, sloth, penguin) and the event cards in the shows
+    section pop up on hover (tap on phones). Their cut-out images are the
+    .webp files in img/.
