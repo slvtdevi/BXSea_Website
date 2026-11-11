@@ -63,6 +63,10 @@
   <!-- ========== 1. HERO ========== -->
   <section class="sec" id="home">
     <img class="art" src="img/section-1.jpg" alt="" />
+    <div class="pop" tabindex="0" style="left:771px;top:524px;width:829px;height:376px;--o:100% 100%">
+      <img src="img/manta.webp" alt="Manty the manta ray" />
+      <span class="bubble" aria-hidden="true">Hello, I’m Manty the Manta Ray!</span>
+    </div>
 
     <h1 class="t display dark" data-r="40,240,490,340" aria-label="Dive Into an Xtraordinary Xperience" style="left:50px;top:256px;font-size:85.9px;letter-spacing:-0.0345em">D&nbsp;&nbsp;ve Into an</h1>
     <p class="t display grad" data-r="40,340,1175,460" data-t="50,348,1163,450" aria-hidden="true" style="left:49px;top:334px;font-size:109.8px;letter-spacing:-0.0313em;--g:linear-gradient(180deg,#C7DCFF,#335FA3)">#XtraordinaryXperience</p>
@@ -77,6 +81,9 @@
   <!-- ========== 2. ABOUT ========== -->
   <section class="sec" id="about-us">
     <img class="art" src="img/section-2.jpg" alt="" />
+    <div class="pop" tabindex="0" style="left:0px;top:481px;width:572px;height:441px;--o:0% 55%">
+      <img src="img/whale.webp" alt="Humpback whale" />
+    </div>
 
     <h2 class="t display dark" data-r="40,1020,580,1140" style="left:50px;top:144px;font-size:99.3px;letter-spacing:-0.0238em">Beneath the</h2>
     <h2 class="t display dark" data-r="615,1240,1390,1340" style="left:623px;top:331px;font-size:116.1px;letter-spacing:-0.0328em">Surface Lies an</h2>
@@ -107,16 +114,47 @@
 
     <p class="t body semi dark" data-r="1195,2180,1565,2245" data-a="r" style="right:47px;top:386px;text-align:right;font-size:22.2px;line-height:28.2px">Step beneath the waves and into a<br />world where every corner tells a story.</p>
 
-    <div class="stop" data-r="180,1995,385,2065" style="left:185px;top:205px;--c:#C28FAE"><h3>Sea Tunnel</h3><p>Glide through Southeast Asia’s<br />largest underwater tunnel</p></div>
-    <div class="stop" data-r="375,2150,565,2220" style="left:381px;top:359px;--c:#628BC8"><h3>Schooling Fish</h3><p>Witness the rhythm of ocean<br />life up close</p></div>
-    <div class="stop" data-r="650,2343,820,2415" style="left:656px;top:553px;--c:#92AB7F"><h3>Rainforest</h3><p>Where land meets water<br />in harmony</p></div>
-    <div class="stop" data-r="905,2468,1075,2535" style="left:911px;top:678px;--c:#6363A8"><h3>Jellyfish Realm</h3><p style="line-height:14.1px">Explore the beauty of light<br />and motion</p></div>
-    <div class="stop" data-r="1315,2378,1470,2450" style="left:1321px;top:588px;--c:#838383"><h3>Penguin Cove</h3><p>A glimpse of life from<br />the polar seas</p></div>
+    <div class="jstop">
+      <button type="button" class="hit" aria-label="Sea Tunnel" aria-expanded="false" style="left:94px;top:336.5px"></button>
+      <img class="pin" src="img/pin-tunnel.webp" alt="" style="left:63px;top:179px;width:111px;height:181px;transform-origin:55px 181.5px" />
+      <img class="scard" src="img/stopcard-tunnel.webp" alt="" style="left:131px;top:189px;width:258px;height:89px" />
+      <div class="stop" data-r="180,1995,385,2065" style="left:185px;top:205px;--c:#C28FAE"><h3>Sea Tunnel</h3><p>Glide through Southeast Asia’s<br />largest underwater tunnel</p></div>
+    </div>
+    <div class="jstop">
+      <button type="button" class="hit" aria-label="Schooling Fish" aria-expanded="false" style="left:289px;top:491.5px"></button>
+      <img class="pin" src="img/pin-fish.webp" alt="" style="left:257px;top:334px;width:112px;height:181px;transform-origin:56px 181.5px" />
+      <img class="scard" src="img/stopcard-fish.webp" alt="" style="left:325px;top:344px;width:259px;height:89px" />
+      <div class="stop" data-r="375,2150,565,2220" style="left:381px;top:359px;--c:#628BC8"><h3>Schooling Fish</h3><p>Witness the rhythm of ocean<br />life up close</p></div>
+    </div>
+    <div class="jstop">
+      <button type="button" class="hit" aria-label="Rainforest" aria-expanded="false" style="left:565px;top:432.5px"></button>
+      <img class="pin" src="img/pin-forest.webp" alt="" style="left:533px;top:456px;width:112px;height:181px;transform-origin:56px 0.5px" />
+      <img class="scard" src="img/stopcard-forest.webp" alt="" style="left:604px;top:538px;width:259px;height:89px" />
+      <div class="stop" data-r="650,2343,820,2415" style="left:656px;top:553px;--c:#92AB7F"><h3>Rainforest</h3><p>Where land meets water<br />in harmony</p></div>
+    </div>
+    <div class="jstop">
+      <button type="button" class="hit" aria-label="Jellyfish Realm" aria-expanded="false" style="left:819px;top:806.5px"></button>
+      <img class="pin" src="img/pin-jelly.webp" alt="" style="left:787px;top:649px;width:112px;height:181px;transform-origin:56px 181.5px" />
+      <img class="scard" src="img/stopcard-jelly.webp" alt="" style="left:855px;top:659px;width:259px;height:89px" />
+      <div class="stop" data-r="905,2468,1075,2535" style="left:911px;top:678px;--c:#6363A8"><h3>Jellyfish Realm</h3><p style="line-height:14.1px">Explore the beauty of light<br />and motion</p></div>
+    </div>
+    <div class="jstop">
+      <button type="button" class="hit" aria-label="Penguin Cove" aria-expanded="false" style="left:1229px;top:726.5px"></button>
+      <img class="pin" src="img/pin-cove.webp" alt="" style="left:1197px;top:569px;width:112px;height:181px;transform-origin:56px 181.5px" />
+      <img class="scard" src="img/stopcard-cove.webp" alt="" style="left:1265px;top:579px;width:259px;height:89px" />
+      <div class="stop" data-r="1315,2378,1470,2450" style="left:1321px;top:588px;--c:#838383"><h3>Penguin Cove</h3><p>A glimpse of life from<br />the polar seas</p></div>
+    </div>
   </section>
 
   <!-- ========== 4. MEMORIES ========== -->
   <section class="sec" id="memories">
     <img class="art" src="img/section-4.jpg" alt="" />
+    <div class="pop" tabindex="0" style="left:0px;top:88px;width:381px;height:374px;--o:0% 25%">
+      <img src="img/sloth.webp" alt="Sloth hanging from a branch" />
+    </div>
+    <div class="pop" tabindex="0" style="left:893px;top:478px;width:613px;height:488px;--o:45% 45%">
+      <img src="img/penguin.webp" alt="Penguin swimming" />
+    </div>
 
     <h2 class="t display dark" data-r="345,2970,870,3060" style="left:356px;top:267px;font-size:92.6px;letter-spacing:-0.0306em">Memories as</h2>
     <p class="t display grad" data-r="610,3055,1360,3160" data-t="620,3064,1347,3148" style="left:615px;top:349px;font-size:92.6px;letter-spacing:-0.0230em;--g:linear-gradient(180deg,#D3E1F7,#86A2CF)">Deep as the Ocean</p>
@@ -129,13 +167,29 @@
   <!-- ========== 5. SHOWS ========== -->
   <section class="sec" id="events">
     <img class="art" src="img/section-5.jpg" alt="" />
+    <div class="event" tabindex="0" aria-label="Daily Feeding Shows" style="left:50px;top:47px;width:360px;height:407px">
+      <img class="lift" src="img/card-feeding.webp" alt="" style="left:0px;top:0px;width:360px;height:391px" />
+      <img class="animal" src="img/otter.webp" alt="" style="--o:50% 100%;left:41px;top:214px;width:263px;height:193px" />
+    </div>
+    <div class="event" tabindex="0" aria-label="Penguin Parade" style="left:1189px;top:66px;width:411px;height:357px">
+      <img class="lift" src="img/card-parade.webp" alt="" style="left:0px;top:0px;width:357px;height:357px" />
+      <img class="animal" src="img/chick.webp" alt="" style="--o:100% 100%;left:116px;top:130px;width:295px;height:227px" />
+    </div>
+    <div class="event" tabindex="0" aria-label="Mermaid Performances" style="left:47px;top:587px;width:553px;height:261px">
+      <img class="lift" src="img/card-mermaid.webp" alt="" style="left:0px;top:75px;width:553px;height:186px" />
+      <img class="animal" src="img/mermaid.webp" alt="" style="--o:50% 100%;left:140px;top:0px;width:383px;height:261px" />
+    </div>
+    <div class="event" tabindex="0" aria-label="Sea Theatre and Amphitheater Shows" style="left:1001px;top:565px;width:359px;height:176px">
+      <img class="lift" src="img/card-theatre.webp" alt="" style="left:0px;top:0px;width:359px;height:171px" />
+      <h3 class="t sf dark lift" data-r="1025,4180,1335,4255" style="left:34px;top:28px;width:300px;text-align:center;font-size:32.9px;line-height:25.4px">Sea Theatre &amp;<br />Amphitheater Shows</h3>
+      <img class="animal" src="img/theatre.webp" alt="" style="--o:0% 100%;left:0px;top:67px;width:219px;height:109px" />
+    </div>
     <h3 class="sr-only">Daily Feeding Shows, Penguin Parade, Mermaid Performances</h3>
 
     <h2 class="t display dark" data-r="470,3860,1020,4040" data-a="r" style="right:591px;top:273px;text-align:right;font-size:80px;letter-spacing:-0.0294em;line-height:87.3px"><span style="display:block;padding-right:0.375em">Experience the<span class="sr-only"> Sea</span></span><span style="display:block">Come to Life</span></h2>
 
     <p class="t body dark" data-r="550,4045,1090,4130" style="left:560px;top:459px;font-size:37.5px;line-height:30.9px;letter-spacing:-0.02em">Witness the ocean’s magic unfold<br />up close, alive, and unforgettable.</p>
 
-    <h3 class="t sf dark" data-r="1025,4180,1335,4255" style="left:1035px;top:593px;width:300px;text-align:center;font-size:32.9px;line-height:25.4px">Sea Theatre &amp;<br />Amphitheater Shows</h3>
 
     <p class="t body bold sky" data-r="1235,4390,1545,4445" style="left:1241px;top:794px;font-size:39.1px">...and many more!</p>
   </section>
