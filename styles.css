@@ -61,6 +61,12 @@ body {
   overflow-y: visible;
 }
 
+/* Seamless joins: each section slides 5px up under the one before it,
+   hiding the thin light strip at the bottom edge of the design images. */
+.sec + .sec {
+  margin-top: -0.5px;
+}
+
 .art {
   position: absolute;
   inset: 0;
@@ -497,21 +503,61 @@ b {
   transform-origin: var(--o, 50% 50%);
 }
 @keyframes float {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  50% { transform: translate(var(--fx, 0px), var(--fy, -10px)) rotate(var(--fr, 0deg)); }
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(var(--fx, 0px), var(--fy, -10px))
+      rotate(var(--fr, 0deg));
+  }
 }
 /* manta sits on the bottom edge of the hero, so it drifts down and hides under the edge */
-.float-manta   { --fx: -6px; --fy: 10px;  --fr: -1.2deg; --dur: 7s; }
-#home          { overflow: clip; }
+.float-manta {
+  --fx: -6px;
+  --fy: 10px;
+  --fr: -1.2deg;
+  --dur: 7s;
+}
+#home {
+  overflow: clip;
+}
 /* whale and sloth are attached to the left edge: they only bob/sway, never move sideways */
-.float-whale   { --fx: 0px;  --fy: -12px; --fr: 1.5deg;  --dur: 8s; --delay: -2s; }
-.float-sloth   { --fx: 0px;  --fy: 6px;   --fr: 2deg;    --dur: 5s; --delay: -1s; }
-.float-penguin { --fx: -10px; --fy: -12px; --fr: -2deg;  --dur: 6s; --delay: -3s; }
+.float-whale {
+  --fx: 0px;
+  --fy: -12px;
+  --fr: 1.5deg;
+  --dur: 8s;
+  --delay: -2s;
+}
+.float-sloth {
+  --fx: 0px;
+  --fy: 6px;
+  --fr: 2deg;
+  --dur: 5s;
+  --delay: -1s;
+}
+.float-penguin {
+  --fx: -10px;
+  --fy: -12px;
+  --fr: -2deg;
+  --dur: 6s;
+  --delay: -3s;
+}
 /* event cards bob gently, one after another */
-.event                { --fy: -8px; --dur: 5s; }
-.event:nth-of-type(2) { --delay: -1.2s; }
-.event:nth-of-type(3) { --delay: -2.4s; }
-.event:nth-of-type(4) { --delay: -3.6s; }
+.event {
+  --fy: -8px;
+  --dur: 5s;
+}
+.event:nth-of-type(2) {
+  --delay: -1.2s;
+}
+.event:nth-of-type(3) {
+  --delay: -2.4s;
+}
+.event:nth-of-type(4) {
+  --delay: -3.6s;
+}
 
 /* Manty's speech bubble */
 .bubble {
@@ -605,7 +651,12 @@ b {
   position: absolute;
   inset: 4px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0 30%, rgba(91, 135, 200, 0.45) 55%, rgba(91, 135, 200, 0) 72%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.95) 0 30%,
+    rgba(91, 135, 200, 0.45) 55%,
+    rgba(91, 135, 200, 0) 72%
+  );
   animation: glow 1.6s ease-in-out infinite;
 }
 .jstop .hit::after {
@@ -617,10 +668,22 @@ b {
   animation: pulse 1.6s ease-out infinite;
 }
 /* stagger the dots so they blink one after another, along the road */
-.jstop:nth-of-type(2) .hit::before, .jstop:nth-of-type(2) .hit::after { animation-delay: 0.3s; }
-.jstop:nth-of-type(3) .hit::before, .jstop:nth-of-type(3) .hit::after { animation-delay: 0.6s; }
-.jstop:nth-of-type(4) .hit::before, .jstop:nth-of-type(4) .hit::after { animation-delay: 0.9s; }
-.jstop:nth-of-type(5) .hit::before, .jstop:nth-of-type(5) .hit::after { animation-delay: 1.2s; }
+.jstop:nth-of-type(2) .hit::before,
+.jstop:nth-of-type(2) .hit::after {
+  animation-delay: 0.3s;
+}
+.jstop:nth-of-type(3) .hit::before,
+.jstop:nth-of-type(3) .hit::after {
+  animation-delay: 0.6s;
+}
+.jstop:nth-of-type(4) .hit::before,
+.jstop:nth-of-type(4) .hit::after {
+  animation-delay: 0.9s;
+}
+.jstop:nth-of-type(5) .hit::before,
+.jstop:nth-of-type(5) .hit::after {
+  animation-delay: 1.2s;
+}
 @keyframes pulse {
   0% {
     transform: scale(0.6);
@@ -632,7 +695,8 @@ b {
   }
 }
 @keyframes glow {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(0.75);
     opacity: 0.5;
   }
@@ -679,16 +743,25 @@ b {
   display: none;
 }
 @media (hover: none) {
-  .journey-hint .hover-only { display: none; }
-  .journey-hint .touch-only { display: inline; }
+  .journey-hint .hover-only {
+    display: none;
+  }
+  .journey-hint .touch-only {
+    display: inline;
+  }
 }
 .journey-hint.gone {
   opacity: 0;
   animation: none;
 }
 @keyframes nudge {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-8px, 6px); } /* nudges toward the road */
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-8px, 6px);
+  } /* nudges toward the road */
 }
 .jstop .pin,
 .jstop .scard {
@@ -745,7 +818,7 @@ b {
 .jstop.touring .pin,
 .jstop.open .scard,
 .jstop.touring .scard,
-.jstop.open .stop ,
+.jstop.open .stop,
 .jstop.touring .stop {
   pointer-events: auto;
 }
@@ -753,13 +826,11 @@ b {
 .jstop.open .hit::after,
 .jstop.touring .hit::after,
 .jstop:hover .hit::before,
-.jstop.open .hit::before ,
+.jstop.open .hit::before,
 .jstop.touring .hit::before {
   animation: none;
   opacity: 0;
 }
-
-
 
 /* ---------- button ---------- */
 .btn-tickets {
@@ -828,4 +899,7 @@ b {
 .contact-list a:hover {
   color: var(--blue);
   text-decoration: underline;
+}
+#visit-us {
+  margin-top: -5px;
 }
