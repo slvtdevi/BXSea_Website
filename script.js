@@ -182,8 +182,7 @@ stops.forEach((st) => {
 });
 
 const journeySection = document.getElementById("explore");
-if (journeySection && "IntersectionObserver" in window &&
-    !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+if (journeySection && "IntersectionObserver" in window) {
   const io = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
       runTour();
