@@ -694,6 +694,7 @@ b {
 /* ---------- journey stops (section 3) ---------- */
 .stop {
   position: absolute;
+  width: 190px;
 }
 .stop h3 {
   margin: 0;
@@ -703,6 +704,7 @@ b {
   letter-spacing: -0.03em;
   line-height: 1;
   color: var(--c);
+  whitespace: nowrap;
 }
 .stop p {
   margin: 7px 0 0;
