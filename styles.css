@@ -572,24 +572,124 @@ b {
   pointer-events: auto;
   cursor: pointer;
 }
-.jstop .hit::after {
-  /* soft pulse so people know the dots do something */
+/* Blinking dots: a glowing halo that "breathes" + a ring that ripples outwards,
+   so the dots look clickable before anyone hovers them. */
+.jstop .hit::before {
   content: "";
   position: absolute;
-  inset: 9px;
+  inset: 4px;
   border-radius: 50%;
-  border: 2px solid rgba(65, 105, 165, 0.55);
-  animation: pulse 2.2s ease-out infinite;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.95) 0 30%,
+    rgba(91, 135, 200, 0.45) 55%,
+    rgba(91, 135, 200, 0) 72%
+  );
+  animation: glow 1.6s ease-in-out infinite;
+}
+.jstop .hit::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  border: 3px solid rgba(65, 105, 165, 0.8);
+  animation: pulse 1.6s ease-out infinite;
+}
+/* stagger the dots so they blink one after another, along the road */
+.jstop:nth-of-type(2) .hit::before,
+.jstop:nth-of-type(2) .hit::after {
+  animation-delay: 0.3s;
+}
+.jstop:nth-of-type(3) .hit::before,
+.jstop:nth-of-type(3) .hit::after {
+  animation-delay: 0.6s;
+}
+.jstop:nth-of-type(4) .hit::before,
+.jstop:nth-of-type(4) .hit::after {
+  animation-delay: 0.9s;
+}
+.jstop:nth-of-type(5) .hit::before,
+.jstop:nth-of-type(5) .hit::after {
+  animation-delay: 1.2s;
 }
 @keyframes pulse {
   0% {
-    transform: scale(0.7);
-    opacity: 0.9;
+    transform: scale(0.6);
+    opacity: 1;
   }
   100% {
-    transform: scale(1.9);
+    transform: scale(2.1);
     opacity: 0;
   }
+}
+@keyframes glow {
+  0%,
+  100% {
+    transform: scale(0.75);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+.jstop .hit:hover::before,
+.jstop .hit:focus-visible::before {
+  animation: none;
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+/* "Hover the dots to explore" hint with an arrow pointing at the first dot */
+.journey-hint {
+  position: absolute;
+  left: 430px;
+  top: 295px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px 10px 12px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--navy);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  box-shadow: 0 10px 26px rgba(15, 58, 129, 0.18);
+  pointer-events: none;
+  animation: nudge 1.6s ease-in-out infinite;
+  transition: opacity 0.4s ease;
+}
+.journey-hint svg {
+  flex: none;
+  color: var(--blue);
+}
+.journey-hint .touch-only {
+  display: none;
+}
+@media (hover: none) {
+  .journey-hint .hover-only {
+    display: none;
+  }
+  .journey-hint .touch-only {
+    display: inline;
+  }
+}
+.journey-hint.gone {
+  opacity: 0;
+  animation: none;
+}
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-8px, 6px);
+  } /* nudges toward the road */
 }
 .jstop .pin,
 .jstop .scard {
@@ -619,18 +719,21 @@ b {
 }
 .jstop:hover .pin,
 .jstop.open .pin,
+.jstop.touring .pin,
 .jstop:focus-within .pin {
   opacity: 1;
   transform: none;
 }
 .jstop:hover .scard,
 .jstop.open .scard,
+.jstop.touring .scard,
 .jstop:focus-within .scard {
   opacity: 1;
   clip-path: inset(0 0 0 0 round 16px);
 }
 .jstop:hover .stop,
 .jstop.open .stop,
+.jstop.touring .stop,
 .jstop:focus-within .stop {
   opacity: 1;
   transform: none;
@@ -640,18 +743,27 @@ b {
 .jstop:hover .scard,
 .jstop:hover .stop,
 .jstop.open .pin,
+.jstop.touring .pin,
 .jstop.open .scard,
-.jstop.open .stop {
+.jstop.touring .scard,
+.jstop.open .stop,
+.jstop.touring .stop {
   pointer-events: auto;
 }
 .jstop:hover .hit::after,
-.jstop.open .hit::after {
+.jstop.open .hit::after,
+.jstop.touring .hit::after,
+.jstop:hover .hit::before,
+.jstop.open .hit::before,
+.jstop.touring .hit::before {
   animation: none;
   opacity: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .jstop .hit::after {
+  .jstop .hit::after,
+  .jstop .hit::before,
+  .journey-hint {
     animation: none;
   }
   .pop > img,

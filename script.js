@@ -148,3 +148,47 @@ document.addEventListener("click", (e) => {
       o.querySelector(".hit").setAttribute("aria-expanded", "false");
     });
 });
+
+// ---------- 20 Journeys: hint + a one-time demo tour ----------
+// The first time the section comes into view, each stop opens for a moment,
+// one after another along the road, to show people what the dots do.
+// The tour stops as soon as the visitor hovers or taps a dot themselves.
+// The "Hover the dots to explore" hint always stays visible.
+let tourTimers = [];
+let tourDone = false;
+
+function stopTour() {
+  tourTimers.forEach(clearTimeout);
+  tourTimers = [];
+  stops.forEach((o) => o.classList.remove("touring"));
+}
+
+function runTour() {
+  if (tourDone) return;
+  tourDone = true;
+  const step = 1300; // how long each stop stays open (ms)
+  stops.forEach((st, i) => {
+    tourTimers.push(setTimeout(() => {
+      stops.forEach((o) => o.classList.remove("touring"));
+      st.classList.add("touring");
+    }, 600 + i * step));
+  });
+  tourTimers.push(setTimeout(stopTour, 600 + stops.length * step));
+}
+
+stops.forEach((st) => {
+  st.addEventListener("mouseenter", stopTour);
+  st.querySelector(".hit").addEventListener("click", stopTour);
+});
+
+const journeySection = document.getElementById("explore");
+if (journeySection && "IntersectionObserver" in window &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const io = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      runTour();
+      io.disconnect();
+    }
+  }, { threshold: 0.6 });
+  io.observe(journeySection);
+}
